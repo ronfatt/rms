@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import {
   aiSignals,
   artists,
+  expertise,
   services,
   siteLinks,
   studioMetrics,
@@ -15,6 +16,9 @@ import { ArtistCard } from "./ArtistCard";
 import { AudioPreviewCard } from "./AudioPreviewCard";
 import { ContactForm } from "./ContactForm";
 import { CTAButton } from "./CTAButton";
+import { DirectorBoard } from "./DirectorBoard";
+import { ExpertiseCard } from "./ExpertiseCard";
+import { FeaturedBuildCard } from "./FeaturedBuildCard";
 import { GlassCard } from "./GlassCard";
 import { HeroCard } from "./HeroCard";
 import { SectionHeader } from "./SectionHeader";
@@ -25,15 +29,14 @@ import { WorkCard } from "./WorkCard";
 
 const tabs = [
   { id: "home", label: "Home", icon: "⌂" },
-  { id: "works", label: "Works", icon: "♪" },
-  { id: "ai", label: "AI", icon: "✧" },
-  { id: "services", label: "Services", icon: "◈" },
-  { id: "contact", label: "Contact", icon: "↗" },
+  { id: "works", label: "Builds", icon: "♪" },
+  { id: "ai", label: "AI OS", icon: "✧" },
+  { id: "services", label: "Offers", icon: "◈" },
+  { id: "contact", label: "Brief", icon: "↗" },
 ];
 
 export function AppShell() {
   const [activeTab, setActiveTab] = useState("home");
-  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     const observers = tabs.map(({ id }) => {
@@ -52,14 +55,6 @@ export function AppShell() {
     return () => observers.forEach((observer) => observer?.disconnect());
   }, []);
 
-  useEffect(() => {
-    const updateScrollState = () => setHasScrolled(window.scrollY > 560);
-    updateScrollState();
-    window.addEventListener("scroll", updateScrollState, { passive: true });
-
-    return () => window.removeEventListener("scroll", updateScrollState);
-  }, []);
-
   return (
     <div className="min-h-dvh bg-[#050506] text-[#f7f3ea]">
       <div className="mx-auto min-h-dvh w-full max-w-[480px] overflow-hidden border-x border-white/[0.06] bg-[linear-gradient(180deg,#101014_0%,#070708_42%,#050506_100%)] shadow-[0_0_80px_rgba(0,0,0,0.55)]">
@@ -70,20 +65,43 @@ export function AppShell() {
             <AudioPreviewCard work={works[0]} />
 
             <div className="mt-8">
+              <DirectorBoard />
+            </div>
+
+            <div className="mt-8">
               <AISoundBrief signals={aiSignals} />
             </div>
 
             <div className="mt-8">
               <SectionHeader
-                eyebrow="Featured Works"
-                title="Sound with a point of view."
-                copy="We don't just make songs. We build sound identities."
+                eyebrow="What I amplify"
+                title="AI makes me faster. Taste makes it powerful."
+                copy="Director thinking, music, video and code in one system."
               />
-              <div className="-mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-2 hide-scrollbar">
-                {works.map((work) => (
-                  <div key={work.title} className="snap-center">
-                    <WorkCard work={work} compact />
-                  </div>
+              <div className="grid gap-3">
+                {expertise.map((item, index) => (
+                  <ExpertiseCard
+                    key={item.title}
+                    item={item}
+                    index={index}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <SectionHeader
+                eyebrow="Featured Builds"
+                title="One creative system."
+                copy="Three lanes: video, sound and product."
+              />
+              <div className="grid gap-3">
+                {works.map((work, index) => (
+                  <FeaturedBuildCard
+                    key={work.title}
+                    work={work}
+                    index={index}
+                  />
                 ))}
               </div>
             </div>
@@ -96,25 +114,25 @@ export function AppShell() {
 
             <GlassCard className="mt-8 p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7bc74]">
-                Booking
+                Collaboration
               </p>
               <h2 className="mt-3 text-2xl font-semibold tracking-normal">
-                From raw idea to release-ready sound.
+                Bring me the idea. I will shape the world around it.
               </h2>
               <p className="mt-3 text-sm leading-6 text-[#c8c1b6]">
-                Premium music production for artists serious about their sound.
+                AI video, music and app-like prototypes for stronger ideas.
               </p>
               <CTAButton href="#contact" className="mt-5 w-full">
-                Start a Project
+                Start a Build
               </CTAButton>
             </GlassCard>
           </section>
 
           <section id="ai" className="mt-12 scroll-mt-6">
             <SectionHeader
-              eyebrow="AI Studio OS"
-              title="Human taste, AI clarity."
-              copy="AI is used as a creative assistant: faster briefs, cleaner references and sharper production decisions. R.ON remains the final taste-maker."
+              eyebrow="AI Director OS"
+              title="I use AI like a production crew."
+              copy="AI accelerates. Human taste directs."
             />
             <AISoundBrief signals={aiSignals} />
             <GlassCard className="mt-4 p-5">
@@ -123,9 +141,9 @@ export function AppShell() {
               </p>
               <div className="mt-4 grid gap-3">
                 {[
-                  "Upload references, demo link or voice note.",
-                  "AI-assisted brief maps mood, genre, vocal tone and release goal.",
-                  "R.ON refines the direction into a premium production plan.",
+                  "Find the idea, emotion and world.",
+                  "Explore scenes, sound and interface fast.",
+                  "Direct the final output with taste.",
                 ].map((step, index) => (
                   <div key={step} className="flex gap-3">
                     <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#f3d27d] text-xs font-bold text-[#101010]">
@@ -142,9 +160,9 @@ export function AppShell() {
 
           <section id="works" className="mt-12 scroll-mt-6">
             <SectionHeader
-              eyebrow="Works Library"
-              title="Proof, not noise."
-              copy="A curated view of production, writing, arranging and scoring work."
+              eyebrow="Build Library"
+              title="Proof across mediums."
+              copy="AI video, music and vibe-coded work."
             />
             <div className="grid gap-4">
               {works.map((work) => (
@@ -172,8 +190,8 @@ export function AppShell() {
           <section id="services" className="mt-12 scroll-mt-6">
             <SectionHeader
               eyebrow="Services"
-              title="Built for artists, brands and stories."
-              copy="Clear packages for music that needs taste, structure and commercial finish."
+              title="Built for creators, brands and bold ideas."
+              copy="Three clear ways to build with me."
             />
             <div className="grid gap-4">
               {services.map((service) => (
@@ -185,8 +203,8 @@ export function AppShell() {
           <section id="contact" className="mt-12 scroll-mt-6">
             <SectionHeader
               eyebrow="Contact"
-              title="Tell R.ON what you hear."
-              copy="Send the idea, reference, demo or brief. The next step should feel clear."
+              title="Tell me what you want to build."
+              copy="Send the idea. I will shape the direction."
             />
             <ContactForm />
           </section>
@@ -207,14 +225,14 @@ export function AppShell() {
                 Official Bio
               </h3>
               <p className="mt-3 text-sm leading-6 text-[#c8c1b6]">
-                R.ON is a music producer, songwriter, composer and arranger
-                leading R.ON Meraki Studio, a premium platform for artists,
-                brands and visual stories that need a signature sound.
+                R.ON is an AI creative director, video creator, music producer
+                and vibe coder using AI, directing technique and sound design
+                to turn ideas into premium creative systems.
               </p>
               <p className="mt-3 text-sm leading-6 text-[#a9a095]">
-                Long-form bio, logo files, approved profile images and
-                downloadable assets can be connected here when final press
-                materials are ready.
+                Long-form bio, showreel, project decks, logo files and approved
+                profile assets can be connected here when final press materials
+                are ready.
               </p>
               <div className="mt-5 grid grid-cols-2 gap-3">
                 <a
@@ -234,31 +252,9 @@ export function AppShell() {
           </section>
         </main>
 
-        <FloatingCTA activeTab={activeTab} isVisible={hasScrolled} />
         <BottomNav activeTab={activeTab} />
       </div>
     </div>
-  );
-}
-
-function FloatingCTA({
-  activeTab,
-  isVisible,
-}: {
-  activeTab: string;
-  isVisible: boolean;
-}) {
-  if (activeTab === "contact" || !isVisible) return null;
-
-  return (
-    <a
-      href="#contact"
-      aria-label="Book R.ON"
-      className="fixed bottom-[calc(78px+env(safe-area-inset-bottom))] right-[max(16px,calc((100vw-480px)/2+16px))] z-30 flex min-h-12 items-center justify-center rounded-full bg-[#f3d27d] px-5 text-sm font-bold text-[#101010] shadow-[0_18px_48px_rgba(211,172,87,0.38)]"
-      style={{ animation: "float-cta 4s ease-in-out infinite" }}
-    >
-      Book
-    </a>
   );
 }
 

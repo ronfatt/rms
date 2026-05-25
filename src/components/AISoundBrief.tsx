@@ -18,13 +18,13 @@ export function AISoundBrief({ signals }: AISoundBriefProps) {
         <div className="mb-4 flex items-center justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8fb7ff]">
-              AI Sound Brief
+              AI Director Brief
             </p>
             <h2
               id="ai-sound-brief-title"
               className="mt-2 text-2xl font-semibold tracking-normal text-[#fff8ea]"
             >
-              Turn references into direction.
+              Turn ideas into worlds.
             </h2>
           </div>
           <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#8fb7ff]/25 bg-[#8fb7ff]/10 text-sm font-bold text-[#cfe0ff]">
@@ -32,9 +32,8 @@ export function AISoundBrief({ signals }: AISoundBriefProps) {
           </div>
         </div>
         <p className="text-sm leading-6 text-[#c8c1b6]">
-          A premium intake layer for artists: mood, references, vocal identity
-          and release goals become a cleaner creative brief before production
-          starts.
+          References, story, scenes, sound and interface ideas become one clear
+          direction.
         </p>
 
         <div className="mt-5 grid gap-3">

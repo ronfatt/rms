@@ -14,13 +14,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ronmerakistudio.com"),
-  title: "R.ON Meraki Studio - Music Producer, Songwriter & Composer",
+  title: "R.ON Meraki Studio - AI Creative Director, Video, Music & Vibe Coding",
   description:
-    "Official website of R.ON Meraki Studio. Premium music production, songwriting, arrangement, artist development and sound identity creation.",
+    "Official website of R.ON Meraki Studio. AI creative direction, video creation, music production, sound identity and vibe-coded digital experiences.",
   openGraph: {
-    title: "R.ON Meraki Studio - Music Producer, Songwriter & Composer",
+    title:
+      "R.ON Meraki Studio - AI Creative Director, Video, Music & Vibe Coding",
     description:
-      "Premium music production, songwriting, arrangement, artist development and sound identity creation.",
+      "AI creative direction, video creation, music production, sound identity and vibe-coded digital experiences.",
     url: "https://ronmerakistudio.com",
     siteName: "R.ON Meraki Studio",
     images: [
@@ -36,9 +37,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "R.ON Meraki Studio - Music Producer, Songwriter & Composer",
+    title:
+      "R.ON Meraki Studio - AI Creative Director, Video, Music & Vibe Coding",
     description:
-      "Premium music production for artists, brands, film and stories.",
+      "AI-enhanced video, music, creative direction and app-like prototypes.",
     images: ["/og-placeholder.svg"],
   },
   icons: {

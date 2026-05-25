@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CTAButton } from "./CTAButton";
 import { GlassCard } from "./GlassCard";
 
@@ -13,7 +14,7 @@ export function HeroCard() {
         <div className="mb-8 flex items-center justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#d7bc74]">
-              Premium Studio
+              AI Creative Director
             </p>
             <p className="mt-1 text-xs text-[#b9b1a4]">Kuala Lumpur / Global</p>
           </div>
@@ -22,24 +23,53 @@ export function HeroCard() {
           </div>
         </div>
 
-        <h1 className="max-w-[10ch] text-5xl font-semibold leading-[0.94] tracking-normal text-[#fff8ea]">
-          R.ON Meraki Studio
+        <h1 className="max-w-[11ch] text-5xl font-semibold leading-[0.94] tracking-normal text-[#fff8ea]">
+          AI + Director Creative Studio
         </h1>
         <p className="mt-4 text-base font-medium text-[#ead9ab]">
-          Music Producer · Songwriter · Composer
+          Video Creator · Music Producer · Vibe Coder
+        </p>
+        <p className="mt-4 rounded-3xl border border-[#d8bd74]/20 bg-[#d8bd74]/10 px-4 py-3 text-xl font-semibold leading-tight text-[#fff3cf]">
+          I turn ideas into cinematic systems.
         </p>
         <p className="mt-4 max-w-sm text-[15px] leading-7 text-[#d1cabf]">
-          Creating premium sound identities for artists, brands, film and
-          stories.
+          AI video, music and app-like builds with director-level taste.
         </p>
         <p className="mt-3 text-sm leading-6 text-[#aaa29a]">
-          音乐制作 · 词曲创作 · 编曲 · 配乐
+          AI影像创作 · 音乐制作 · 导演思维 · Vibe Coding
           <br />
-          为艺人、品牌与影像打造有记忆点的声音。
+          把创意变成影像、声音与产品体验。
         </p>
 
+        <div className="mt-5 overflow-hidden rounded-[28px] border border-white/10 bg-black/30">
+          <div className="relative aspect-[16/9]">
+            <Image
+              src="/ai/director-concept.webp"
+              alt="AI-generated cinematic director visual"
+              fill
+              priority
+              sizes="(max-width: 480px) calc(100vw - 56px), 424px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-white/5" />
+            <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-3">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#f3d27d]">
+                  AI Visual System
+                </p>
+                <p className="mt-1 text-sm font-semibold text-white">
+                  Concept · Scene · Sound
+                </p>
+              </div>
+              <span className="rounded-full bg-white/12 px-3 py-2 text-xs font-semibold text-white backdrop-blur-md">
+                Directed
+              </span>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-5 flex flex-wrap gap-2">
-          {["AI-assisted brief", "Release-ready", "Artist direction"].map(
+          {["AI video", "Music", "Vibe coding", "Creative direction"].map(
             (tag) => (
               <span
                 key={tag}
@@ -52,9 +82,9 @@ export function HeroCard() {
         </div>
 
         <div className="mt-7 grid grid-cols-2 gap-3">
-          <CTAButton href="#works">Listen to Works</CTAButton>
+          <CTAButton href="#works">View Capabilities</CTAButton>
           <CTAButton href="#contact" tone="secondary">
-            Work With R.ON
+            Build With Me
           </CTAButton>
         </div>
       </div>

@@ -16,16 +16,24 @@ export function ServiceCard({ service }: ServiceCardProps) {
       <p className="mt-3 text-sm leading-6 text-[#c4bbb0]">
         {service.description}
       </p>
+      <div className="mt-4 rounded-2xl border border-[#d8bd74]/20 bg-[#d8bd74]/10 p-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d7bc74]">
+          Best for
+        </p>
+        <p className="mt-2 text-sm leading-6 text-[#f0dfb3]">
+          {service.bestFor}
+        </p>
+      </div>
       <div className="mt-4 rounded-2xl border border-white/10 bg-black/20 p-3">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8eaef8]">
-          Client receives
+          You receive
         </p>
         <p className="mt-2 text-sm leading-6 text-[#ddd4c7]">
           {service.receives}
         </p>
       </div>
       <CTAButton href="#contact" tone="secondary" className="mt-4 w-full">
-        Inquire
+        Start Brief
       </CTAButton>
     </GlassCard>
   );

@@ -5,6 +5,7 @@ export type Work = {
   genre: string;
   description: string;
   coverTone: string;
+  image: string;
   platforms: {
     spotify?: string;
     apple?: string;
@@ -29,11 +30,18 @@ export type Service = {
   for: string;
   description: string;
   receives: string;
+  bestFor: string;
 };
 
 export type AiSignal = {
   label: string;
   value: string;
+  description: string;
+};
+
+export type Expertise = {
+  title: string;
+  signal: string;
   description: string;
 };
 
@@ -47,27 +55,27 @@ export const siteLinks = {
 // TODO: Replace placeholder works with official R.ON Meraki Studio releases.
 export const works: Work[] = [
   {
-    title: "Midnight Signal",
-    artist: "Ari Lane",
-    role: "Producer / Arranger",
-    genre: "Alt Pop",
+    title: "AI Music Video System",
+    artist: "R.ON Creative Lab",
+    role: "AI Director / Producer",
+    genre: "Video",
     description:
-      "A polished late-night pop record shaped around intimate vocals, wide synths and release-ready impact.",
+      "AI visuals, edit rhythm and sound direction.",
     coverTone: "from-[#111111] via-[#3d2d51] to-[#c9a85c]",
+    image: "/ai/director-concept.webp",
     platforms: {
-      spotify: "#",
-      apple: "#",
       youtube: "#",
     },
   },
   {
-    title: "Golden Static",
-    artist: "R.ON Circle",
-    role: "Songwriter / Producer",
-    genre: "R&B",
+    title: "Sound Identity Build",
+    artist: "Artist / Brand Project",
+    role: "Music Producer / Composer",
+    genre: "Music",
     description:
-      "Warm harmony stacks, minimalist drums and a signature hook built for repeat listening.",
+      "Original sound direction for artists and brands.",
     coverTone: "from-[#0d1317] via-[#315e67] to-[#d8c48a]",
+    image: "/ai/director-sound.webp",
     platforms: {
       spotify: "#",
       apple: "#",
@@ -75,13 +83,14 @@ export const works: Work[] = [
     },
   },
   {
-    title: "Frame 24",
-    artist: "Short Film Score",
-    role: "Composer",
-    genre: "Cinematic",
+    title: "Vibe Coding Prototype",
+    artist: "AI Product Interface",
+    role: "Creative Technologist",
+    genre: "Code",
     description:
-      "A restrained score with piano motifs, soft pulses and emotional lift for visual storytelling.",
-    coverTone: "from-[#070707] via-[#24314f] to-[#b6c2d6]",
+      "App-like prototypes built with AI-assisted flow.",
+    coverTone: "from-[#070707] via-[#24314f] to-[#75a7ff]",
+    image: "/ai/director-scene.webp",
     platforms: {
       youtube: "#",
     },
@@ -125,82 +134,88 @@ export const artists: Artist[] = [
 
 export const services: Service[] = [
   {
-    title: "Full Song Production",
-    for: "Artists building a complete release.",
-    description: "From raw idea to final arrangement, vocal direction and mix-ready production.",
-    receives: "Production direction, arrangement, session files and release roadmap.",
+    title: "AI Music Video Package",
+    for: "Artists, creators and brands that need cinematic content with sound.",
+    description:
+      "AI video direction with sound, scenes and edit rhythm.",
+    receives:
+      "Director board, prompt direction, shot flow and sound plan.",
+    bestFor: "Music videos, launch content, visualizers, short-form campaigns.",
   },
   {
-    title: "Songwriting",
-    for: "Artists who need a stronger story and hook.",
-    description: "Melody, lyric and topline development shaped around your voice and audience.",
-    receives: "Song draft, lyric direction, melodic options and refinement notes.",
+    title: "Creative Direction System",
+    for: "Creators and businesses that need a stronger public identity.",
+    description:
+      "Positioning, visuals, sound and content direction in one system.",
+    receives:
+      "Strategy, references, campaign angles and roadmap.",
+    bestFor: "Personal brands, artist identity, product launches, content systems.",
   },
   {
-    title: "Arrangement",
-    for: "Demos that need emotional lift.",
-    description: "Structure, instrumentation and dynamics designed to make the song feel finished.",
-    receives: "Arrangement plan, instrument palette and production-ready sections.",
-  },
-  {
-    title: "Vocal Production",
-    for: "Singers who want a premium vocal sound.",
-    description: "Performance coaching, comping direction and vocal layer design.",
-    receives: "Vocal map, harmony plan and polished vocal production notes.",
-  },
-  {
-    title: "Artist Direction",
-    for: "Artists defining a signature sound.",
-    description: "Creative direction across references, tone, song choices and release identity.",
-    receives: "Sound identity brief, reference map and next-step strategy.",
-  },
-  {
-    title: "Brand Music / Jingle",
-    for: "Brands that need instant recall.",
-    description: "Short-form music identities for campaigns, launches and digital content.",
-    receives: "Music options, usage-ready edits and sonic identity guidance.",
-  },
-  {
-    title: "Film & Short Video Scoring",
-    for: "Directors and creators with a story to land.",
-    description: "Cinematic music cues that support emotion without overpowering the picture.",
-    receives: "Cue sketches, final score stems and timing-aware revisions.",
-  },
-  {
-    title: "Release-Ready Demo Production",
-    for: "Artists preparing pitches or first releases.",
-    description: "A focused production package that turns a simple demo into a serious presentation.",
-    receives: "Release-ready demo, feedback pass and platform preparation notes.",
+    title: "Vibe Coding MVP",
+    for: "Founders and creators who need an idea to feel real fast.",
+    description:
+      "AI-assisted interface direction and frontend prototype build.",
+    receives:
+      "UI structure, clickable flow, frontend build and roadmap.",
+    bestFor: "Landing pages, internal tools, creative apps, MVP demos.",
   },
 ];
 
 export const trustBadges = [
-  "Release-ready workflow",
-  "Artist-first direction",
-  "Premium sound identity",
-  "Bilingual creative range",
+  "AI + director workflow",
+  "Video, music and code",
+  "Premium creative taste",
+  "Fast execution system",
 ];
 
 export const studioMetrics = [
-  { value: "01", label: "Sound identity first" },
-  { value: "48h", label: "Brief response target" },
-  { value: "4", label: "Creative lanes" },
+  { value: "AI", label: "Creative acceleration" },
+  { value: "4x", label: "Video music code strategy" },
+  { value: "01", label: "Director-led taste" },
 ];
 
 export const aiSignals: AiSignal[] = [
   {
-    label: "Mood DNA",
-    value: "Cinematic / Intimate / Premium",
-    description: "Translate references into a sharper emotional direction.",
+    label: "Director Brain",
+    value: "Concept / Shot / Emotion",
+    description: "Turn loose ideas into cinematic direction and visual language.",
   },
   {
-    label: "Release Fit",
-    value: "Artist · Brand · Film",
-    description: "Shape the production path around where the sound must live.",
+    label: "AI Production Stack",
+    value: "Video · Music · Code",
+    description: "Use AI to move from idea to visuals, sound and prototype.",
   },
   {
-    label: "Vocal Focus",
-    value: "Tone / Range / Hook",
-    description: "Identify where the performance needs clarity or lift.",
+    label: "Vibe Coding",
+    value: "Idea to Interface",
+    description: "Build app-like prototypes that make the concept feel real.",
+  },
+];
+
+export const expertise: Expertise[] = [
+  {
+    title: "AI Video Creation",
+    signal: "Director-level visuals",
+    description:
+      "Concept, prompt direction, scene rhythm and cinematic mood.",
+  },
+  {
+    title: "Music Production",
+    signal: "Sound with identity",
+    description:
+      "Sound, songwriting and sonic identity with a clear point of view.",
+  },
+  {
+    title: "Vibe Coding",
+    signal: "Ideas become usable",
+    description:
+      "App-like websites, prototypes and tools with AI-assisted development.",
+  },
+  {
+    title: "Creative Direction",
+    signal: "Taste across mediums",
+    description:
+      "Story, visuals, sound, interface and strategy in one system.",
   },
 ];
