@@ -27,3 +27,16 @@ Editable website content lives in:
 - `public/og-placeholder.svg` for the temporary social preview image
 
 Placeholder content is marked with TODO comments and should be replaced with approved releases, collaborators, platform links, WhatsApp, Instagram and press assets.
+
+## Email Delivery
+
+Creative brief submissions post to `src/app/api/brief/route.ts` and send to `ronfung1313@gmail.com` through Resend.
+
+Required environment variables:
+
+```bash
+RESEND_API_KEY=...
+CONTACT_FROM_EMAIL="R.ON Meraki Studio <hello@ronmerakistudio.com>"
+```
+
+WhatsApp uses `wa.me` and includes the current brief content automatically.

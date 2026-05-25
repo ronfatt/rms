@@ -6,6 +6,11 @@ export type Work = {
   description: string;
   coverTone: string;
   image: string;
+  goal: string;
+  direction: string;
+  output: string;
+  tools: string[];
+  privateReel: string;
   platforms: {
     spotify?: string;
     apple?: string;
@@ -48,7 +53,9 @@ export type Expertise = {
 export const siteLinks = {
   email: "hello@ronmerakistudio.com",
   bookingEmail: "booking@ronmerakistudio.com",
-  whatsapp: "#TODO-whatsapp-link",
+  briefEmail: "ronfung1313@gmail.com",
+  whatsappNumber: "601158917029",
+  whatsapp: "https://wa.me/601158917029",
   instagram: "#TODO-instagram-link",
 };
 
@@ -62,9 +69,13 @@ export const works: Work[] = [
     description:
       "AI visuals, edit rhythm and sound direction.",
     coverTone: "from-[#111111] via-[#3d2d51] to-[#c9a85c]",
-    image: "/ai/director-concept.webp",
+    image: "/profile/ron-film-set.webp",
+    goal: "Turn a music idea into a cinematic short-form world.",
+    direction: "AI visual frames, director board, edit rhythm and sound mood.",
+    output: "Private video reel, scene system and music direction.",
+    tools: ["OpenAI", "AI Visuals", "CapCut", "Sound Design"],
+    privateReel: "Private reel available on request",
     platforms: {
-      youtube: "#",
     },
   },
   {
@@ -75,12 +86,14 @@ export const works: Work[] = [
     description:
       "Original sound direction for artists and brands.",
     coverTone: "from-[#0d1317] via-[#315e67] to-[#d8c48a]",
-    image: "/ai/director-sound.webp",
+    image: "/profile/ron-vocal.webp",
+    goal: "Create a sound that feels recognizable and premium.",
+    direction: "Reference map, sonic palette, melody mood and arrangement path.",
+    output: "Sound identity brief and release-ready music direction.",
+    tools: ["OpenAI", "Logic Pro", "Suno", "Arrangement"],
     platforms: {
-      spotify: "#",
-      apple: "#",
-      youtube: "#",
     },
+    privateReel: "Private audio/video deck available on request",
   },
   {
     title: "Vibe Coding Prototype",
@@ -90,10 +103,14 @@ export const works: Work[] = [
     description:
       "App-like prototypes built with AI-assisted flow.",
     coverTone: "from-[#070707] via-[#24314f] to-[#75a7ff]",
-    image: "/ai/director-scene.webp",
+    image: "/profile/ron-ai-workflow.webp",
+    goal: "Make a raw product idea feel real quickly.",
+    direction: "Mobile-first interface, creative copy and fast frontend build.",
+    output: "Clickable prototype, landing page or MVP interface.",
+    tools: ["Cursor", "Next.js", "OpenAI", "Vercel"],
     platforms: {
-      youtube: "#",
     },
+    privateReel: "Prototype walkthrough available on request",
   },
 ];
 
@@ -218,4 +235,22 @@ export const expertise: Expertise[] = [
     description:
       "Story, visuals, sound, interface and strategy in one system.",
   },
+];
+
+export const aiStack = [
+  "OpenAI",
+  "Runway",
+  "Midjourney",
+  "Suno",
+  "CapCut",
+  "Cursor",
+  "Next.js",
+  "Vercel",
+];
+
+export const videoHostingOptions = [
+  "Self-hosted reels",
+  "Cloudflare Stream",
+  "Mux private",
+  "Password-gated",
 ];

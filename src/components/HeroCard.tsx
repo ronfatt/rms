@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CTAButton } from "./CTAButton";
 import { GlassCard } from "./GlassCard";
+import { LivingSignal } from "./LivingSignal";
 
 export function HeroCard() {
   return (
@@ -24,14 +25,12 @@ export function HeroCard() {
         </div>
 
         <h1 className="max-w-[11ch] text-5xl font-semibold leading-[0.94] tracking-normal text-[#fff8ea]">
-          AI + Director Creative Studio
+          R.ON builds AI-powered creative systems.
         </h1>
         <p className="mt-4 text-base font-medium text-[#ead9ab]">
           Video Creator · Music Producer · Vibe Coder
         </p>
-        <p className="mt-4 rounded-3xl border border-[#d8bd74]/20 bg-[#d8bd74]/10 px-4 py-3 text-xl font-semibold leading-tight text-[#fff3cf]">
-          I turn ideas into cinematic systems.
-        </p>
+        <LivingSignal />
         <p className="mt-4 max-w-sm text-[15px] leading-7 text-[#d1cabf]">
           AI video, music and app-like builds with director-level taste.
         </p>
@@ -42,27 +41,27 @@ export function HeroCard() {
         </p>
 
         <div className="mt-5 overflow-hidden rounded-[28px] border border-white/10 bg-black/30">
-          <div className="relative aspect-[16/9]">
+          <div className="relative aspect-[4/3]">
             <Image
-              src="/ai/director-concept.webp"
-              alt="AI-generated cinematic director visual"
+              src="/profile/ron-film-set.webp"
+              alt="Portrait of R.ON"
               fill
               priority
               sizes="(max-width: 480px) calc(100vw - 56px), 424px"
-              className="object-cover"
+              className="object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-white/5" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-white/5" />
             <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-3">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#f3d27d]">
-                  AI Visual System
+                  R.ON
                 </p>
                 <p className="mt-1 text-sm font-semibold text-white">
-                  Concept · Scene · Sound
+                  Creative x Business
                 </p>
               </div>
               <span className="rounded-full bg-white/12 px-3 py-2 text-xs font-semibold text-white backdrop-blur-md">
-                Directed
+                AI Director
               </span>
             </div>
           </div>

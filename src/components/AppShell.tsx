@@ -1,31 +1,33 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
   aiSignals,
   artists,
-  expertise,
   services,
   siteLinks,
   studioMetrics,
   trustBadges,
   works,
 } from "@/data/site";
+import { AIStackCard } from "./AIStackCard";
 import { AISoundBrief } from "./AISoundBrief";
 import { ArtistCard } from "./ArtistCard";
-import { AudioPreviewCard } from "./AudioPreviewCard";
+import { CaseStudyCard } from "./CaseStudyCard";
 import { ContactForm } from "./ContactForm";
+import { CreativeSignalCard } from "./CreativeSignalCard";
 import { CTAButton } from "./CTAButton";
 import { DirectorBoard } from "./DirectorBoard";
-import { ExpertiseCard } from "./ExpertiseCard";
 import { FeaturedBuildCard } from "./FeaturedBuildCard";
 import { GlassCard } from "./GlassCard";
 import { HeroCard } from "./HeroCard";
+import { MethodCard } from "./MethodCard";
+import { PrivateReelCard } from "./PrivateReelCard";
 import { SectionHeader } from "./SectionHeader";
 import { ServiceCard } from "./ServiceCard";
 import { StudioMetrics } from "./StudioMetrics";
 import { TrustBadge } from "./TrustBadge";
-import { WorkCard } from "./WorkCard";
 
 const tabs = [
   { id: "home", label: "Home", icon: "⌂" },
@@ -62,31 +64,10 @@ export function AppShell() {
           <section id="home" className="scroll-mt-6">
             <HeroCard />
             <StudioMetrics metrics={studioMetrics} />
-            <AudioPreviewCard work={works[0]} />
+            <CreativeSignalCard />
 
             <div className="mt-8">
               <DirectorBoard />
-            </div>
-
-            <div className="mt-8">
-              <AISoundBrief signals={aiSignals} />
-            </div>
-
-            <div className="mt-8">
-              <SectionHeader
-                eyebrow="What I amplify"
-                title="AI makes me faster. Taste makes it powerful."
-                copy="Director thinking, music, video and code in one system."
-              />
-              <div className="grid gap-3">
-                {expertise.map((item, index) => (
-                  <ExpertiseCard
-                    key={item.title}
-                    item={item}
-                    index={index}
-                  />
-                ))}
-              </div>
             </div>
 
             <div className="mt-8">
@@ -131,42 +112,30 @@ export function AppShell() {
           <section id="ai" className="mt-12 scroll-mt-6">
             <SectionHeader
               eyebrow="AI Director OS"
-              title="I use AI like a production crew."
-              copy="AI accelerates. Human taste directs."
+              title="Think like a director. Move like a system."
+              copy="Direct. Generate. Build."
             />
+            <MethodCard />
+            <div className="mt-4">
+              <PrivateReelCard />
+            </div>
+            <AIStackCard />
+            <div className="mt-4">
+              <CreativeSignalCard />
+            </div>
             <AISoundBrief signals={aiSignals} />
-            <GlassCard className="mt-4 p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7bc74]">
-                Workflow
-              </p>
-              <div className="mt-4 grid gap-3">
-                {[
-                  "Find the idea, emotion and world.",
-                  "Explore scenes, sound and interface fast.",
-                  "Direct the final output with taste.",
-                ].map((step, index) => (
-                  <div key={step} className="flex gap-3">
-                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#f3d27d] text-xs font-bold text-[#101010]">
-                      {index + 1}
-                    </span>
-                    <p className="pt-1 text-sm leading-6 text-[#d8d0c4]">
-                      {step}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </GlassCard>
           </section>
 
           <section id="works" className="mt-12 scroll-mt-6">
             <SectionHeader
-              eyebrow="Build Library"
+              eyebrow="Case Studies"
               title="Proof across mediums."
-              copy="AI video, music and vibe-coded work."
+              copy="Private reels. Case-led presentation."
             />
+            <PrivateReelCard />
             <div className="grid gap-4">
-              {works.map((work) => (
-                <WorkCard key={work.title} work={work} />
+              {works.map((work, index) => (
+                <CaseStudyCard key={work.title} work={work} index={index} />
               ))}
             </div>
           </section>
@@ -216,10 +185,23 @@ export function AppShell() {
               copy="A ready base for media, collaborators and booking partners."
             />
             <GlassCard className="p-5">
-              <div className="mb-5 grid aspect-[16/10] place-items-center rounded-[24px] border border-white/10 bg-[linear-gradient(135deg,#131313,#272b3f_52%,#c7a85e)]">
-                <span className="text-sm font-semibold uppercase tracking-[0.24em] text-white/80">
-                  Profile Image
-                </span>
+              <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-[24px] border border-white/10 bg-[#111113]">
+                <Image
+                  src="/profile/ron-studio-desk.webp"
+                  alt="R.ON official profile portrait"
+                  fill
+                  sizes="(max-width: 480px) calc(100vw - 72px), 408px"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-white/5" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#f3d27d]">
+                    Official Profile Visual
+                  </p>
+                  <p className="mt-1 text-sm font-semibold text-white">
+                    R.ON · Creative x Business
+                  </p>
+                </div>
               </div>
               <h3 className="text-lg font-semibold text-[#fff8ea]">
                 Official Bio
