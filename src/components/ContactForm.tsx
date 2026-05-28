@@ -87,13 +87,13 @@ export function ContactForm() {
     <GlassCard as="section" className="p-4">
       <div className="mb-5 rounded-3xl border border-[#8fb7ff]/20 bg-[#8fb7ff]/10 p-4">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8fb7ff]">
-          Creative Brief
+          Send a Creative Brief
         </p>
         <h3 className="mt-2 text-xl font-semibold text-[#fff8ea]">
-          Start with the idea. I will shape the system.
+          AI Director for video, music and product-like experiences.
         </h3>
         <p className="mt-2 text-sm leading-6 text-[#c8c1b6]">
-          Send references, deadline and feeling. I will turn it into direction.
+          Send references, deadline and feeling. I will shape the direction.
         </p>
       </div>
       <div className="mb-5 grid grid-cols-3 gap-2">

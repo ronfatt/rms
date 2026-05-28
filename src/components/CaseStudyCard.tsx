@@ -30,9 +30,9 @@ export function CaseStudyCard({ work, index }: CaseStudyCardProps) {
       </div>
       <div className="p-4">
         <div className="grid gap-3">
-          <CaseLine label="Goal" value={work.goal} />
+          <CaseLine label="Challenge" value={work.goal} />
           <CaseLine label="Direction" value={work.direction} />
-          <CaseLine label="Output" value={work.output} />
+          <CaseLine label="Deliverable" value={work.output} />
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {work.tools.map((tool) => (

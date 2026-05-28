@@ -15,6 +15,9 @@ export function PrivateReelCard() {
         Selected video works are shared privately to protect client context,
         unreleased material and creative strategy.
       </p>
+      <p className="mt-2 text-sm font-semibold text-[#f0dfb3]">
+        Available for serious collaborations only.
+      </p>
       <div className="mt-4 grid gap-2">
         {works.map((work) => (
           <div

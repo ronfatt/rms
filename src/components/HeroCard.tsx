@@ -24,20 +24,15 @@ export function HeroCard() {
           </div>
         </div>
 
-        <h1 className="max-w-[11ch] text-5xl font-semibold leading-[0.94] tracking-normal text-[#fff8ea]">
-          R.ON builds AI-powered creative systems.
+        <h1 className="max-w-[13ch] text-[42px] font-semibold leading-[0.96] tracking-normal text-[#fff8ea]">
+          AI Director for video, music and product-like experiences.
         </h1>
         <p className="mt-4 text-base font-medium text-[#ead9ab]">
-          Video Creator · Music Producer · Vibe Coder
+          R.ON · Creative systems with sound, story and code.
         </p>
         <LivingSignal />
-        <p className="mt-4 max-w-sm text-[15px] leading-7 text-[#d1cabf]">
-          AI video, music and app-like builds with director-level taste.
-        </p>
-        <p className="mt-3 text-sm leading-6 text-[#aaa29a]">
-          AI影像创作 · 音乐制作 · 导演思维 · Vibe Coding
-          <br />
-          把创意变成影像、声音与产品体验。
+        <p className="mt-4 text-sm leading-6 text-[#aaa29a]">
+          AI影像 · 原创音乐 · 导演思维 · Vibe Coding
         </p>
 
         <div className="mt-5 overflow-hidden rounded-[28px] border border-white/10 bg-black/30">
@@ -68,22 +63,20 @@ export function HeroCard() {
         </div>
 
         <div className="mt-5 flex flex-wrap gap-2">
-          {["AI video", "Music", "Vibe coding", "Creative direction"].map(
-            (tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-semibold text-[#e7decd]"
-              >
-                {tag}
-              </span>
-            ),
-          )}
+          {["AI video", "Original sound", "Vibe coding"].map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-semibold text-[#e7decd]"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
 
         <div className="mt-7 grid grid-cols-2 gap-3">
-          <CTAButton href="#works">View Capabilities</CTAButton>
+          <CTAButton href="#works">View Cases</CTAButton>
           <CTAButton href="#contact" tone="secondary">
-            Build With Me
+            Send Brief
           </CTAButton>
         </div>
       </div>
